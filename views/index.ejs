@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* dark theme */
+:root{
+    --primaryColor:#111111;
+    --secondaryColor:#000000;
+    --textColor:#eee;
+    --borderColor:#eeeeee;
+    --secondaryBorderColor:crimson;
+    --hoverBackgroundColor:#343434;
+
+}
+/* light theme */
+/* :root{
+    --primaryColor:#ffffff;
+    --secondaryColor:#ffffff;
+    --textColor:#000000;
+    --borderColor:#9f8aff;
+    --secondaryBorderColor:crimson;
+    --hoverBackgroundColor:#c5d2ff;
+    --shadowColor: #e4e3e4;
+    --filterValue: saturate(300%) sepia(2) brightness(2) hue-rotate(-170deg);
+
+} */
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/index.js"></script>
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <div class="navBar">
+          <div class="navigationTool">
+            <div><i class="ri-arrow-left-line"></i></div>
+            <div><i class="ri-arrow-right-line"></i></div>
+            <div><i class="ri-arrow-up-line"></i></div>
+            <div><i class="ri-restart-line refresh"></i></div>
+          </div>
+          <div class="currentPathContainer" contenteditable="">
+            1. PROGRAMING WORKSPACE\1.Projects\100 Days of Projects\32.
+            FILE-MANGER
+          </div>
+          <div class="searchBox">
+            <input type="text" placeholder="Search here .." />
+            <i class="ri-search-line"></i>
+          </div>
+        </div>
+        <div class="toolBar">
+          <div class="left">
+            <div class="newCreate">
+              <span><i class="ri-add-circle-fill"></i>New</span>
+            </div>
+            <div class="toolContainer">
+              <i class="ri-scissors-2-fill" title="Cut"></i>
+              <i class="ri-file-copy-line" title="Copy"></i>
+              <i class="ri-clipboard-line" title="Paste"></i>
+              <i class="ri-delete-bin-line" title="Delete"></i>
+            </div>
+          </div>
+          <div class="right">
+            <div class="filterContainer">
+              <span class="sort-btn"><i class="ri-sort-alphabet-asc"></i> Sort</span>
+              <span><i class="ri-gallery-view-2"></i>View</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sideBar">
+        <ul>
+          <a href="/downloads">
+            <li>
+              <img src="/src/images/download-icon.png" alt="" />Downloads
+            </li>
+          </a>
+          <a href="/desktop">
+            <li>
+              <img src="/src/images/desktop-icon.png" alt="" />Desktop
+            </li>
+          </a>
+          <a href="/musics">
+            <li><img src="/src/images/music-icon.png" alt="" />Musics</li>
+          </a>
+          <a href="/videos">
+            <li><img src="/src/images/video-icon.png" alt="" />Videos</li>
+          </a>
+          <a href="/pictures">
+            <li><img src="/src/images/image-icon.png" alt="" />Images</li>
+          </a>
+          <!-- Drives separator -->
+          <div class="drives-separator" style="width: 100%; height: 1px; background-color: var(--borderColor); margin: 10px 0;"></div>
+          <div id="drives-container">
+            <!-- Drive items will be inserted here by JavaScript -->
+          </div>
+        </ul>
+      </div>
+      <div class="mainSection"></div>
+    </div>
+  </body>
+
+</html>

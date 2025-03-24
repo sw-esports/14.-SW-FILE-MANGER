@@ -1,0 +1,365 @@
+/* root variable declaration for dark theme */
+
+/* global css code  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #b6ffbb42;
+    outline:1px solid #004514; */
+    font-family: 'poppins';
+    font-size: 1rem;
+    font-weight: 400;
+    caret-color: transparent;
+    
+}::selection{
+   background-color: transparent;}
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--secondaryColor);
+    color: var(--textColor);
+}
+/* cursor pointer on every i tag icon  with title edit able*/
+i {
+    cursor: pointer;
+    position: relative;
+   
+}
+ 
+
+/* main height and width  code  */
+.main{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    background-color: var(--secondaryColor);
+    grid-template-areas: "header header header header"
+                     "sideBar mainSection mainSection mainSection";
+    grid-template-columns: repeat(3, 25vw);
+    grid-template-rows: 98px calc(100vh - 100px);
+    overflow: hidden;
+    
+}
+/* header code with navbar and toolbar */
+.header{
+    width: 100%;
+    grid-area: header;
+   
+}
+/* navar bar code */
+.navBar{
+    width: 100%;
+    height: 52.5px;
+    background-color:var(--primaryColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0  10px;
+    gap: 0.57%;
+    border-bottom: 2px solid var(--borderColor);
+    box-shadow: 0px -10px 16px var(--borderColor);
+}
+.navBar > div {
+    height: 32px;
+    border-radius: 3px;
+    box-shadow:1px 1px 10px  var(--shadowColor);
+}
+.navigationTool{
+    display: flex;
+    align-items: center;
+    width: 15.34%;
+    justify-content: space-between;
+    &  i {
+        width: 200px;
+        background-color:transparent;
+        
+        color: var(--textColor);
+        font-size:130%;
+    }
+}
+.currentPathContainer{
+    width: 59.17%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--secondaryColor);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */   
+ & ::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+}
+
+}
+.searchBox {
+    width: 24.25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    columns: white;
+    background-color: var(--secondaryColor);
+    & input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: var(--secondaryColor);
+        padding: 10px;
+        color: white; /* Ensure text color is white */
+    }
+    & ::placeholder {
+        color: white;
+    }
+    & i {
+        padding: 10px;
+        font-size: 140%;
+    }
+    &:focus {
+        border: 1px solid var(--secondaryBorderColor);
+    }
+}
+
+
+/* toolBar code */
+.toolBar{
+    width: 100%;
+    background-color: var(--secondaryColor);
+    height: 45.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: 2px  solid  var(--borderColor);
+    & .left{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 50%;
+        & .newCreate{
+            width: 20%;
+            border-right: 1px solid var(--borderColor);
+        }
+        & .toolContainer{
+            margin-left: 10px;
+            width: 50%;
+            display: flex;  
+            justify-content: center;
+            align-items: center;
+            gap: 20%;
+            border-right: 1px solid var(--borderColor);
+            & i {
+                font-size: 130%;
+            }
+           
+        }
+    }
+    & .right{
+        display: flex;
+        align-items: center;
+        width: 15%;
+        justify-content: right;
+        border-left: 1px solid var(--borderColor);
+        gap: 10px;
+        & span {
+            margin: 10px;
+            
+        }
+    }
+
+}
+
+.sideBar{
+    grid-area: sideBar;
+    background-color: var(--secondaryColor);
+    resize: horizontal;
+    overflow: auto;
+    min-width: 147px;
+    max-width: 50vw;
+    cursor: ew-resize;
+    border-right: 1px solid var(--borderColor);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
+}
+.sideBar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow: hidden;
+    & a{
+        width: 100%;
+        height: 50px;
+        text-decoration: none;
+        color: var(--textColor);
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.2s ease;
+        &:hover{
+            background-color: var(--hoverBackgroundColor);
+        }
+    }
+    & li img{
+        width: 23px;
+    }
+    & li {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+    & .drive{
+        filter: hue-rotate(30deg);  
+    }
+}
+/* main section code */
+.mainSection {
+    grid-area: mainSection;
+    background-color:var(--secondaryColor);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    overflow-y: auto;
+    scrollbar-width: none;
+
+}
+/* card code */
+.folderCard{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    cursor: pointer;
+    & .folderIconContainer{
+        width: 100%;
+        height: 70%;
+        margin: 0;
+        overflow: hidden;
+        object-fit: cover;
+    }
+    & span{
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        padding: 0 2px;
+    }
+    & img{
+        object-fit: cover;
+        height: 100%;
+      
+
+    }
+
+    & .rename {
+        background-color: #000000;
+        outline: 1px solid var(--borderColor);
+        padding:0 5px ;
+    }
+    &:hover{
+        background-color: var(--hoverBackgroundColor);
+        transition:all 0.2s;
+    }
+}
+/* Context menu styles */
+.context-menu {
+  background-color: var(--secondaryColor);
+  border: 1px solid var(--borderColor);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.context-menu div {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--textColor);
+  transition: background-color 0.2s;
+}
+
+.context-menu div:hover {
+  background-color: var(--hoverBackgroundColor);
+}
+
+.context-menu div.disabled {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: default;
+}
+
+/* Add styles for the clipboard button icons */
+.ri-file-copy-line, .ri-cut-line, .ri-clipboard-line {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.ri-file-copy-line:hover, .ri-cut-line:hover, .ri-clipboard-line:hover {
+  color: #fff;
+}
+
+.folderCard.selected {
+    background-color: var(--hoverBackgroundColor);
+    outline: 2px solid var(--borderColor);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+.folderIconContainer img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s;
+  }
+  
+  /* Optional hover effect for image thumbnails */
+  .folderCard:hover .folderIconContainer img {
+    transform: scale(1.05);
+  }
+
+/* Modal dialog overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Create dialog options hover effect */
+.create-option:hover {
+  background-color: var(--hoverBackgroundColor);
+}
+
+/* Selected option in create dialog */
+.create-option.selected {
+  background-color: var(--hoverBackgroundColor);
+  border: 1px solid var(--borderColor) !important;
+}
+
+/* Sort controls */
+.sort-container select,
+.sort-container button {
+  transition: all 0.2s;
+}
+
+.sort-container select:hover,
+.sort-container button:hover {
+  border-color: var(--hoverBackgroundColor);
+}
+.ri-restart-line:hover {
+    content: "\edb1"; /* Unicode for the icon */
+    color: var(--hoverBackgroundColor); /* Change color on hover */
+    transition: all 0.2s ease-in-out; /* Smooth transition */
+}
+.sort-btn{
+    cursor: pointer;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "14.-sw-file-manger",
+  "version": "1.0.0",
+  "description": "this is a clone of file expoler",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npx nodemon app.js",
+    "test": "turbo app.js"
+  },
+  "author": "suraj maurya",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
